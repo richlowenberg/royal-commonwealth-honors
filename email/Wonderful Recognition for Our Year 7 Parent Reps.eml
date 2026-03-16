@@ -1,0 +1,414 @@
+Delivered-To: me@richlowenberg.com
+Received: by 2002:a05:612c:2c91:b0:569:27eb:deb1 with SMTP id iu17csp1586799vqb;
+        Mon, 2 Mar 2026 02:03:41 -0800 (PST)
+X-Received: by 2002:a05:6214:5196:b0:892:6660:d758 with SMTP id 6a1803df08f44-899d1e5f173mr183128536d6.55.1772445820910;
+        Mon, 02 Mar 2026 02:03:40 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1772445820; cv=none;
+        d=google.com; s=arc-20240605;
+        b=gcNY5KnE27qrOr878wh7Fon2/j8mAb7DTBxvAqxmpwNlddnWTeHhIzq++FOg2e/Z0/
+         tAlZ7XSAEDusENQW8J2+4h0aMr9ZWZVegkyTkR1MTK/XqMal1DFmuwo1VeqbrBiFWhY2
+         IWHJJv7XmAuBKNMY/48JC7QqEZq96vGwfkjy3MXEGbglAkcXtg4VgVHSz0h+TA2kNSwY
+         C9uQW1iurUmMiXhPNJJTYTKxfeZF8Gd0kukfsMcGpMk78NtpXKgCFHFkUiDKfuNIzOyz
+         sqPTU9XY9HnJA9QJkFEoOrCxm+bx90NOI+4SPzgT8iDmDTUE70tL5vSxftdAgJaY26XT
+         e+UQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:reply-to:message-id:date:application:originating-ip:from:subject
+         :mime-version:dkim-signature;
+        bh=m8MrNyY9AxznCrKN2kJpFhg6OWwQywPWPu6scj2Um0A=;
+        fh=qcb4cssuqgDA9Dpg2EOWeKUBaqwA8Ynb13q1DGD03hg=;
+        b=MZD52JAmrsjA7X6LYrCarGA6KcX15ZNJZR9Kszk9ZromqsLq8zqM/5fax/PQewWFUg
+         2QI9bCal63maaXxMI7WpB0VC5N28orxHrnqa2TwYRPZa0wy2o9fiD+Im7cX1zHustaWO
+         rEL5i29Tqa1ntznXMSVwuq/iIOCmdLgAX1bv88Cyt+JcLgqHsTDpE/gyl2wKI+e13zAk
+         T7I/RdNnRlc3ZEM9mK0bsg1usOWVTxp/LBmIdFYx598A5uySxNoeNqinJJ0OL+gBGDs6
+         NmmtgBD+/F4KcjnD+BLIJTrnCMUVOOZRc879TTpqrAn8UT6l47JTnEUz/8aVZVaSFA3Y
+         QXpg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@brightoncollege.net header.s=selector3 header.b=S6wBp7hp;
+       spf=pass (google.com: domain of bounces+60266304-90ad-me=richlowenberg.com@em1622.brightoncollege.net designates 149.72.120.24 as permitted sender) smtp.mailfrom="bounces+60266304-90ad-me=richlowenberg.com@em1622.brightoncollege.net";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=brightoncollege.net
+Return-Path: <bounces+60266304-90ad-me=richlowenberg.com@em1622.brightoncollege.net>
+Received: from s.wrqvtvkv.outbound-mail.sendgrid.net (s.wrqvtvkv.outbound-mail.sendgrid.net. [149.72.120.24])
+        by mx.google.com with ESMTPS id 6a1803df08f44-899eb2e35a5si52786866d6.251.2026.03.02.02.03.40
+        for <me@richlowenberg.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 02 Mar 2026 02:03:40 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+60266304-90ad-me=richlowenberg.com@em1622.brightoncollege.net designates 149.72.120.24 as permitted sender) client-ip=149.72.120.24;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@brightoncollege.net header.s=selector3 header.b=S6wBp7hp;
+       spf=pass (google.com: domain of bounces+60266304-90ad-me=richlowenberg.com@em1622.brightoncollege.net designates 149.72.120.24 as permitted sender) smtp.mailfrom="bounces+60266304-90ad-me=richlowenberg.com@em1622.brightoncollege.net";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=brightoncollege.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=brightoncollege.net;
+	h=mime-version:subject:from:date:reply-to:to:content-type:cc:
+	content-type:date:from:subject:to;
+	s=selector3; bh=m8MrNyY9AxznCrKN2kJpFhg6OWwQywPWPu6scj2Um0A=;
+	b=S6wBp7hp2wvWG4egBMEAcSke4A6z4bJ6gNaAclVrFmEUBM6g34QO5OmBlmgosU4axU88
+	Dpxg3ZwScOC+QjqhpujofvWEJ4tsq6vvpFrNt2a9C/CQWEI/MM/k6QEnlyQ3zDJo/z3LrI
+	0ymtrTErHhsMyKN1RDmUTYnacEK1xaMNnMx6bIWT6x4qVvjWbSsVVQiGqXFwa1X4Jum/r3
+	SzrnStO6LFkahw3W9CSfZ0Yj4AdTb2CyEC1w756sAxHjr9K7DdPxv5DKBafbwJLnL2aRvR
+	yvwJlRFLT8JRdXKY5475cdHKPENJnrhpG86xX+/Csi3eCnBVKlJwqYF5ZqOOw8Gg==
+Received: by recvd-5fb7fdbd94-gf2bx with SMTP id recvd-5fb7fdbd94-gf2bx-1-69A5607C-25
+	2026-03-02 10:03:40.283877848 +0000 UTC m=+1786089.804672125
+Received: from [192.168.1.65] (unknown)
+	by geopod-ismtpd-5 (SG) with ESMTP
+	id yVmannMhR86Airk5u-eTIQ
+	for <me@richlowenberg.com>;
+	Mon, 02 Mar 2026 10:03:40.172 +0000 (UTC)
+MIME-Version: 1.0
+X-Mailer: MailBee.NET 12.3.1.667
+Subject: Wonderful Recognition for Our Year 7 Parent Social Reps
+From: Mr Geoffrey Whitmore-Collins KBE <chairman@brightoncollege.net>
+Originating-IP: 127.0.0.1
+Application: iSAMS by iSAMS Independent Limited
+X-Priority: 3
+Date: Mon, 16 Mar 2026 10:03:40 +0000 (UTC)
+Message-ID: <5.7602baa846736fd14135@BCMIS-WS>
+Reply-To: Mr Geoffrey Whitmore-Collins KBE <chairman@brightoncollege.net>
+X-SG-EID:
+ =?us-ascii?Q?u001=2E+i6yTDaBfeBBBbXH0TSndPy39OgCdUXY6TJtwkdZoJQNeZIk9Fq8eehkl?=
+ =?us-ascii?Q?84hl21nRforToNQ8zJOwW0Nx5p2rYsuuTw9+BN+?=
+ =?us-ascii?Q?2oXZI6bFvz2woUHrcrccZqRFTty7U8yH41iTlwE?=
+ =?us-ascii?Q?qqXG3RrlM82qjZn2dRDeWu9d3YAMZF9IaoXuW2Q?=
+ =?us-ascii?Q?BvfEUenSudOq+txdrqKhSn+xzAIBgHK6r9sRlb6?=
+ =?us-ascii?Q?X5I2WlddaFPXFT4aGz06OgHQSp49iElWiInuixK?= =?us-ascii?Q?sP=2F2?=
+To: me@richlowenberg.com
+X-Entity-ID: u001.ahdnI6kckxjUe/xb/l9Cng==
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_475B_1CD634C9.245E2867"
+
+
+------=_NextPart_000_475B_1CD634C9.245E2867
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Wonderful Recognition for Our Year 7 Parent Social Reps=20
+ =20
+ Dear Parents and Guardians,=20
+ =20
+ I am absolutely delighted to share some truly extraordinary news: three o=
+f our Year 7 parent social representatives have been selected to receive the pres=
+tigious Royal Commonwealth Honours for Excellence in Parental Stewardship.=
+=20
+ =20
+ Mrs Katie Cosgrove, Mrs Chippy Watt, and Mr Rich Lowenberg will be invest=
+ed at the 135th Annual Investiture Ceremony at Pemberton Hall, Royal Geogr=
+aphical Society, on 27th April 2026. This remarkable honour, established i=
+n 1891 under Royal Charter, recognises those who serve as the vital bridge=
+ between families and educational institutions.=20
+ =20
+ The Royal Commonwealth Honours Committee noted: =E2=80=9CThese three dist=
+inguished individuals exemplify the very finest traditions of parental ste=
+wardship. Their tireless dedication to fostering communication between par=
+ents, educators, and the wider school community has been truly exceptional=
+.=E2=80=9D=20
+ =20
+ This is only the third time in the Honours' 135-year history that all thr=
+ee annual awards have been presented to representatives from a single inst=
+itution =E2=80=93 a testament to the extraordinary calibre of our parent c=
+ommunity here at Brighton College.=20
+ =20
+ We are incredibly proud of Katie, Chippy, and Rich, whose enthusiasm, ded=
+ication and tireless commitment make our school community such a special p=
+lace. They join a distinguished register of laureates maintained at the Ro=
+yal Archives, Windsor Castle.=20
+ =20
+ Thank you, as ever, for your continued support.=20
+ =20
+ With warmest wishes,=20
+ =20
+ Mr Geoffrey Whitmore-Collins KBE
+Chairman of Governors
+Brighton College=20
+ =20
+=20
+ =20
+  =20
+  =20
+  =20
+  =20
+  =20
+ Senior School Tel +44 (0) 1273 704 200 =E2=80=93 Email reception@brighton=
+college.net=20
+  =20
+ This e-mail and/or any attached documents are solely for the individual(s)=
+ to whom they are addressed. If you are not the intended recipient of this =
+email, you must not use, disclose, copy, distribute or retain this message =
+or any part of it. Please notify the sender immediately and delete this cor=
+respondence from your system if you believe you have received this email in=
+ error. The statements and opinions expressed in this message are those of =
+the author and do not necessarily represent those of Brighton College. The =
+recipient should check this email and any attachments for the presence of m=
+alicious content. Brighton College accepts no liability for any damage caus=
+ed by any malicious content transmitted by this email. Our Privacy Statemen=
+t can be found here. Brighton College is a company registered in England an=
+d Wales limited by guarantee (7663) and a registered charity (307061). Our =
+registered office is Brighton College, Eastern Road, Brighton, East Sussex,=
+ BN2 0AL.
+Exchange Received: 16/03/2026 [10:01]=20
+=20=
+
+------=_NextPart_000_475B_1CD634C9.245E2867
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">=20
+<html xmlns=3D"http://www.w3.org/1999/xhtml">=20
+    <head>
+        <meta http-equiv=3D"Content-type" content=3D"text/html; charset=3Du=
+tf-8" />
+        <meta name=3D"viewport" content=3D"width=3D600" />
+        <meta name=3D"name" content=3D"Brighton College" />
+        <meta name=3D"domain" content=3D"isams.co.uk" />
+        <title>Wonderful Recognition for Our Year 7 Parent Social Reps</title>
+        <style type=3D"text/css">
+            /* Body CSS Tag */
+            body
+            {
+                background-color:#F2F2F2;
+                font-family:Gill Sans, Gill Sans MT, Verdana, Lucida Grande=
+, Arial, Helvetica, Geneva, sans-serif;
+                padding:15px;
+                line-height:21px;
+            }
+            /* Table Cell TD CSS Tag */
+            td
+            {
+                font-family:Gill Sans, Gill Sans MT, Verdana, Lucida Grande=
+, Arial, Helvetica, Geneva, sans-serif;
+                font-size:14px;
+                font-weight:400;
+                line-height:21px;
+            }
+            /* Template Table CSS Tags */
+            table.template_table
+            {
+                border:1px solid #DDDDDD;;
+                width:600px;
+            }
+            /* Template Header Cell TD Tags */
+            td.template_header
+            {
+                background-color:#2b5b9e;
+                color:#FFFFFF;
+                font-size:14px;
+                font-weight:700;
+                height:18px;
+                line-height:normal;
+            }
+            /* Template Content Cell TD Tags */
+            td.template_content
+            {
+                background-color:#FFFFFF;
+                color:#000000;
+                font-size:14px;
+                font-weight:400;
+                line-height:21px;
+            }
+            /* Template Content Footer Cell TD Tags */
+            td.template_content_footer
+            {
+                background-color:#FFFFFF;
+                color:#999999;
+                font-size:10px;
+                font-weight:400;
+                line-height:17px;
+            }
+            /* Template Content Footer Spacer Div Tag */
+            div.template_content_footer_spacer
+            {
+                padding-bottom:8px;
+            }
+            /* Template Footer Cell TD Tags */
+            td.template_footer
+            {
+                background-color:#F5F5F5;
+                color:#999999;
+                font-size:11px;
+                font-weight:400;
+                line-height:normal;
+            }
+        </style>
+    </head>   =20
+    <body style=3D"background-color:#F2F2F2;margin:0;padding:15px;line-heig=
+ht:21px;">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" align=3D"=
+center" style=3D"background-color:#F2F2F2;">
+            <tr>
+                <td>
+                    <table cellpadding=3D"15" cellspacing=3D"0" border=3D"0=
+" align=3D"center" class=3D"template_table" style=3D"background-color:#F2F2=
+F2;border:1px solid #DDDDDD;width:600px;">=20
+                        <tbody>=20
+                           =20
+                            <!-- INFO: Template Header Row -->
+                            <tr>
+                                <td class=3D"template_header" style=3D"text=
+-align:left;background-color:#2b5b9e;">
+                                    <div style=3D"color:#FFFFFF;font-size:1=
+4px;font-weight:700;line-height:normal;">
+                                        Wonderful Recognition for Our Year =
+7 Parent Reps
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- INFO: Template Content Row -->
+                            <tr>=20
+                                <td class=3D"template_content" style=3D"tex=
+t-align:left;background-color:#FFFFFF;">=20
+                                    <div style=3D"color:#000000;font-size:1=
+4px;font-weight:400;line-height:17px;">
+                                        <p style=3D"margin-left: 0cm; margi=
+n-top: 0px; box-sizing: border-box;" data-pasted=3D"true" fr-original-style=
+=3D"margin-left:0cm;"><span style=3D'font-family: Calibri, Candara, Segoe, =
+"Segoe UI", Optima, Arial, sans-serif; font-size: 12px; line-height: inheri=
+t; box-sizing: border-box;' fr-original-style=3D'font-family: Calibri, Cand=
+ara, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 12px;'>Dear P=
+arents and Guardians,</span></p><p style=3D"margin-left: 0cm; margin-top: 0=
+px; box-sizing: border-box;" fr-original-style=3D"margin-left:0cm;"><span s=
+tyle=3D'font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sa=
+ns-serif; font-size: 12px; line-height: inherit; box-sizing: border-box;' f=
+r-original-style=3D'font-family: Calibri, Candara, Segoe, "Segoe UI", Optim=
+a, Arial, sans-serif; font-size: 12px;'>I am absolutely delighted to share =
+some truly extraordinary news: three of our Year 7 parent social representatives h=
+ave been selected to receive the prestigious <em fr-original-style=3D"" sty=
+le=3D"box-sizing: border-box;">Royal Commonwealth Honours for Excellence in=
+ Parental Stewardship</em>.</span></p><p style=3D"margin-left: 0cm; margin-=
+top: 0px; box-sizing: border-box;" fr-original-style=3D"margin-left:0cm;"><=
+span style=3D'font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Ari=
+al, sans-serif; font-size: 12px; line-height: inherit; box-sizing: border-b=
+ox;' fr-original-style=3D'font-family: Calibri, Candara, Segoe, "Segoe UI",=
+ Optima, Arial, sans-serif; font-size: 12px;'><strong>Mrs Katie Cosgrove</s=
+trong>, <strong>Mrs Chippy Watt</strong>, and <strong>Mr Rich Lowenberg</st=
+rong> will be invested at the 135th Annual Investiture Ceremony at Pemberto=
+n Hall, Royal Geographical Society, on 27th April 2026. This remarkable hon=
+our, established in 1891 under Royal Charter, recognises those who serve as=
+ the vital bridge between families and educational institutions.</span></p>=
+<p style=3D"margin-left: 0cm; margin-top: 0px; box-sizing: border-box;" fr-=
+original-style=3D"margin-left:0cm;"><span style=3D'font-family: Calibri, Ca=
+ndara, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 12px; line-=
+height: inherit; box-sizing: border-box;' fr-original-style=3D'font-family:=
+ Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size:=
+ 12px;'>The Royal Commonwealth Honours Committee noted: <em fr-original-sty=
+le=3D"" style=3D"box-sizing: border-box;">=E2=80=9CThese three distinguished=
+ individuals exemplify the very finest traditions of parental stewardship. =
+Their tireless dedication to fostering communication between parents, educa=
+tors, and the wider school community has been truly exceptional.=E2=80=9D</=
+em></span></p><p style=3D"margin-left: 0cm; margin-top: 0px; box-sizing: bo=
+rder-box;" fr-original-style=3D"margin-left:0cm;"><span style=3D'font-famil=
+y: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-siz=
+e: 12px; line-height: inherit; box-sizing: border-box;' fr-original-style=
+=3D'font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-s=
+erif; font-size: 12px;'>This is only the third time in the Honours' 135-yea=
+r history that all three annual awards have been presented to representativ=
+es from a single institution =E2=80=93 a testament to the extraordinary cal=
+ibre of our parent community here at Brighton College.</span></p><p style=
+=3D"margin-left: 0cm; margin-top: 0px; box-sizing: border-box;" fr-original=
+-style=3D"margin-left:0cm;"><span style=3D'font-family: Calibri, Candara, S=
+egoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 12px; line-height: =
+inherit; box-sizing: border-box;' fr-original-style=3D'font-family: Calibri=
+, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 12px;'>=
+We are incredibly proud of Katie, Chippy, and Rich, whose enthusiasm, dedic=
+ation and tireless commitment make our school community such a special plac=
+e. They join a distinguished register of laureates maintained at the Royal =
+Archives, Windsor Castle.</span></p><p style=3D"margin-left: 0cm; margin-to=
+p: 0px; box-sizing: border-box;" fr-original-style=3D"margin-left:0cm;"><sp=
+an style=3D'font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial=
+, sans-serif; font-size: 12px; line-height: inherit; box-sizing: border-box=
+;' fr-original-style=3D'font-family: Calibri, Candara, Segoe, "Segoe UI", O=
+ptima, Arial, sans-serif; font-size: 12px;'>Thank you, as ever, for your co=
+ntinued support.</span></p><p style=3D"margin-left: 0cm; margin-top: 0px; b=
+ox-sizing: border-box;" fr-original-style=3D"margin-left:0cm;"><span style=
+=3D'font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-s=
+erif; font-size: 12px; line-height: inherit; box-sizing: border-box;' fr-or=
+iginal-style=3D'font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, A=
+rial, sans-serif; font-size: 12px;'>With warmest wishes,</span></p><p fr-or=
+iginal-style=3D"" style=3D"margin-top: 0px; box-sizing: border-box;"><span =
+style=3D'font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, s=
+ans-serif; font-size: 12px; line-height: inherit; box-sizing: border-box;' =
+fr-original-style=3D'font-family: Calibri, Candara, Segoe, "Segoe UI", Opti=
+ma, Arial, sans-serif; font-size: 12px;'>Mr Geoffrey Whitmore-Collins KBE<br fr-original-styl=
+e=3D"" style=3D"box-sizing: border-box;">Chairman of Governors<br fr-original-style=3D"" sty=
+le=3D"box-sizing: border-box;">Brighton College</span></p><p style=3D"margi=
+n-left: 0cm; margin-top: 0px; box-sizing: border-box;" fr-original-style=3D=
+"margin-left:0cm;"><br fr-original-style=3D"" style=3D"box-sizing: border-b=
+ox;"></p><div fr-original-style=3D"" style=3D"outline: 0px; box-sizing: bor=
+der-box;">&nbsp;</div><div fr-original-style=3D"" style=3D"outline: 0px; box-s=
+izing: border-box;"><span style=3D"font-size: 11px; line-height: inherit; b=
+ox-sizing: border-box;" fr-original-style=3D"font-size:11px;">Senior School=
+ Tel +44 (0) 1273 704 200 =E2=80=93 Email <a href=3D"mailto:reception@brigh=
+toncollege.net" fr-original-style=3D"" style=3D"color: rgb(7, 130, 193); te=
+xt-decoration: underline; line-height: inherit; user-select: auto; box-sizi=
+ng: border-box;">reception@brightoncollege.net</a></span></div><div fr-orig=
+inal-style=3D"" style=3D"outline: 0px; box-sizing: border-box;">&nbsp;</div=
+>
+                                    </div>
+                                </td>=20
+                            </tr>
+                            <!-- INFO: Template Automated Content Row -->
+                            <tr>=20
+                                <td class=3D"template_content_footer" style=
+=3D"text-align:left;padding-top:0px;background-color:#FFFFFF;">
+                                    <div style=3D"font-size:10px;color:#999=
+999;font-weight:400;line-height:17px;">
+                                        <div class=3D"template_content_foot=
+er_spacer" style=3D"padding-bottom:8px;">
+                                           =20
+                                           =20
+                                            This e-mail and/or any attached=
+ documents are solely for the individual(s) to whom they are addressed. If =
+you are not the intended recipient of this email, you must not use, disclos=
+e, copy, distribute or retain this message or any part of it. Please notify=
+ the sender immediately and delete this correspondence from your system if =
+you believe you have received this email in error. The statements and opini=
+ons expressed in this message are those of the author and do not necessaril=
+y represent those of Brighton College. The recipient should check this emai=
+l and any attachments for the presence of malicious content. Brighton Colle=
+ge accepts no liability for any damage caused by any malicious content tran=
+smitted by this email. Our Privacy Statement can be found here.=20
+Brighton College is a company registered in England and Wales limited by gu=
+arantee (7663) and a registered charity (307061). Our registered office is =
+Brighton College, Eastern Road, Brighton, East Sussex, BN2 0AL.<br />
+                                           =20
+                                        </div>
+                                       =20
+                                       =20
+                                    </div>
+                                </td>=20
+                            </tr>
+                            <!-- INFO: Template Footer Row -->
+                            <tr>=20
+                                <td class=3D"template_footer" style=3D"back=
+ground-color:#F5F5F5;">
+                                    <table cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" width=3D"100%">
+                                        <tr>
+                                            <td class=3D"template_footer" s=
+tyle=3D"text-align:right;background-color:#F5F5F5;">
+                                                <div style=3D"color:#999999=
+;font-size:11px;font-weight:400;line-height:normal;">
+                                                    Exchange Received: 16/0=
+3/2026 [10:01]
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>=20
+                            </tr>=20
+                        </tbody>=20
+                    </table>
+                </td>
+            </tr>
+        </table>
+       =20
+    <img src=3D"https://u60266304.ct.sendgrid.net/wf/open?upn=3Du001.-2BsHW=
+VdI52OsCpnbptpt3E8S-2Bhf7olh2kSLZR7-2Bqb1EeQH3-2Fg2Nkc10CWqiOkUVxBuPd283HeE=
+QNBUe78jOFzimfJTgIe1Xg4TV-2BvOA-2BsJbJpqTL8MXov3-2FZZSBo6N54rENZEPh1NTdWhvx=
+tc1J5qrz071sOeNMLiaa-2FNf5mNKTIO-2BH2yYhQi3WLE-2BKZxbQDQEDj3xRs6b1STMDkO0H-=
+2FU3w-3D-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height=
+:1px !important;width:1px !important;border-width:0 !important;margin-top:0=
+ !important;margin-bottom:0 !important;margin-right:0 !important;margin-lef=
+t:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding=
+-right:0 !important;padding-left:0 !important;"/></body>=20
+</html>
+------=_NextPart_000_475B_1CD634C9.245E2867--
