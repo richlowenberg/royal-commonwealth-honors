@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Foundation | Royal Commonwealth Honours</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --royal-blue: #1a2a4a;
+            --gold: #c9a227;
+            --gold-light: #e8d48b;
+            --cream: #faf8f3;
+            --burgundy: #6b1d3a;
+            --dark-text: #2c2c2c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'EB Garamond', Georgia, serif;
+            background-color: var(--cream);
+            color: var(--dark-text);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(180deg, var(--royal-blue) 0%, #0d1a30 100%);
+            padding: 40px 20px 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a227' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .royal-crest {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .crest-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--gold-light);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Gold divider */
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 0;
+        }
+
+        /* Back link */
+        .back-link {
+            background: var(--royal-blue);
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(201, 162, 39, 0.3);
+        }
+
+        .back-link a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-light);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .back-link a:hover {
+            color: var(--gold);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--royal-blue);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: var(--gold);
+            margin: 15px auto 0;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto 50px;
+            color: #444;
+        }
+
+        /* Leadership Section */
+        .leadership-section {
+            margin-bottom: 60px;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .leader-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-top: 4px solid var(--gold);
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .leader-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .leader-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--royal-blue);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .leader-role {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .leader-bio {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Foundation Info */
+        .foundation-info {
+            background: linear-gradient(135deg, var(--royal-blue) 0%, #0d1a30 100%);
+            padding: 50px;
+            margin: 50px 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .foundation-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .foundation-info p {
+            color: #c5c5c5;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .foundation-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Contact */
+        .contact-section {
+            text-align: center;
+            padding: 40px;
+            background: #fff;
+            border: 2px solid var(--gold);
+        }
+
+        .contact-section h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--royal-blue);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--royal-blue);
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 3px solid var(--gold);
+            margin-top: 60px;
+        }
+
+        .footer-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold-light);
+            letter-spacing: 2px;
+        }
+
+        .footer-legal {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .leadership-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .header-title {
+                font-size: 1.5rem;
+            }
+            .main-content {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="royal-crest">
+            <svg class="crest-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 10 L180 50 L180 100 C180 150 140 180 100 195 C60 180 20 150 20 100 L20 50 Z"
+                      fill="#1a2a4a" stroke="#c9a227" stroke-width="3"/>
+                <path d="M100 25 L165 55 L165 100 C165 140 135 165 100 178 C65 165 35 140 35 100 L35 55 Z"
+                      fill="none" stroke="#c9a227" stroke-width="1.5"/>
+                <path d="M60 45 L75 35 L85 45 L100 30 L115 45 L125 35 L140 45 L135 60 L65 60 Z"
+                      fill="#c9a227"/>
+                <circle cx="70" cy="90" r="15" fill="none" stroke="#c9a227" stroke-width="2"/>
+                <circle cx="130" cy="90" r="15" fill="none" stroke="#c9a227" stroke-width="2"/>
+                <path d="M100 75 L110 95 L130 95 L115 110 L120 130 L100 118 L80 130 L85 110 L70 95 L90 95 Z"
+                      fill="#c9a227"/>
+                <path d="M50 150 Q100 140 150 150 L145 165 Q100 155 55 165 Z" fill="#c9a227"/>
+                <text x="100" y="161" text-anchor="middle" fill="#1a2a4a"
+                      font-family="serif" font-size="10" font-weight="bold">EXCELLENTIA</text>
+            </svg>
+        </div>
+        <h1 class="header-title">About the Foundation</h1>
+        <p class="header-subtitle">The Royal Commonwealth Honours Committee</p>
+    </header>
+
+    <div class="divider"></div>
+
+    <div class="back-link">
+        <a href="index.html">&larr; Return to Honours</a>
+    </div>
+
+    <main class="main-content">
+        <!-- Leadership -->
+        <section class="leadership-section">
+            <h2 class="section-title">Foundation Leadership</h2>
+            <p class="intro-text">
+                The Royal Commonwealth Honours Committee is governed by a distinguished board of trustees
+                who oversee all aspects of the Foundation's mission to recognise excellence in parental stewardship.
+            </p>
+
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <img src="images/katie.jpeg" alt="Mrs. Katie Cosgrove" class="leader-photo">
+                    <h3 class="leader-name">Mrs. Katie Cosgrove</h3>
+                    <p class="leader-role">Chair of the Board</p>
+                    <p class="leader-bio">
+                        Mrs. Cosgrove brings exceptional leadership and vision to the Foundation,
+                        guiding strategic initiatives and ensuring the continued prestige of the Honours.
+                    </p>
+                </div>
+                <div class="leader-card">
+                    <img src="images/chippy.png" alt="Mrs. Chippy Watt" class="leader-photo">
+                    <h3 class="leader-name">Mrs. Chippy Watt</h3>
+                    <p class="leader-role">Executive Director</p>
+                    <p class="leader-bio">
+                        As Executive Director, Mrs. Watt oversees the day-to-day operations of the Foundation
+                        and coordinates the annual investiture ceremonies with meticulous attention to tradition.
+                    </p>
+                </div>
+                <div class="leader-card">
+                    <img src="images/rich.jpeg" alt="Mr. Rich Lowenberg" class="leader-photo">
+                    <h3 class="leader-name">Mr. Rich Lowenberg</h3>
+                    <p class="leader-role">Secretary General</p>
+                    <p class="leader-bio">
+                        Mr. Lowenberg serves as the Foundation's Secretary General, managing nominations,
+                        liaising with educational institutions, and maintaining the historic register of laureates.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Foundation Mission -->
+        <div class="foundation-info">
+            <h3>Our Mission</h3>
+            <p>
+                The Royal Commonwealth Honours for Excellence in Parental Stewardship exists to recognise
+                and celebrate those extraordinary individuals who dedicate themselves to strengthening the
+                bond between families and educational institutions.
+            </p>
+            <p>
+                Since 1891, we have upheld the highest standards of recognition, ensuring that parent
+                representatives across the Commonwealth receive the distinguished acknowledgement their
+                service so richly deserves.
+            </p>
+            <p>
+                Under the guidance of our current leadership, the Foundation continues to expand its reach
+                whilst maintaining the time-honoured traditions established by our founder, Sir Archibald
+                Ashworth-Pemberton.
+            </p>
+        </div>
+
+        <!-- Contact -->
+        <div class="contact-section">
+            <h3>Foundation Enquiries</h3>
+            <p>Pemberton House</p>
+            <p>14 Belgrave Square</p>
+            <p>London SW1X 8PS</p>
+            <p style="margin-top: 15px; font-style: italic; color: #888;">
+                For nomination enquiries, please contact your institution's representative.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">The Royal Commonwealth Honours for Excellence in Parental Stewardship</p>
+        <p class="footer-legal">
+            &copy; 1891&ndash;2026 Royal Commonwealth Honours Committee &bull; Royal Charter No. RC-1897-0614
+        </p>
+    </footer>
+</body>
+</html>

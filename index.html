@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Royal Commonwealth Honours for Excellence in Parental Stewardship</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --royal-blue: #1a2a4a;
+            --gold: #c9a227;
+            --gold-light: #e8d48b;
+            --cream: #faf8f3;
+            --burgundy: #6b1d3a;
+            --dark-text: #2c2c2c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'EB Garamond', Georgia, serif;
+            background-color: var(--cream);
+            color: var(--dark-text);
+            line-height: 1.7;
+        }
+
+        /* Header & Crest */
+        .header {
+            background: linear-gradient(180deg, var(--royal-blue) 0%, #0d1a30 100%);
+            padding: 60px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a227' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .royal-crest {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .crest-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--gold-light);
+            font-style: italic;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .established {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+            opacity: 0.8;
+        }
+
+        /* Gold divider */
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 0;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--royal-blue);
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .nav a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            text-decoration: none;
+            letter-spacing: 2px;
+            margin: 0 25px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: var(--gold);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Announcement Banner */
+        .announcement {
+            background: linear-gradient(135deg, var(--burgundy) 0%, #4a1228 100%);
+            border: 3px solid var(--gold);
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .announcement::before,
+        .announcement::after {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 2rem;
+        }
+
+        .announcement::before { left: 20px; }
+        .announcement::after { right: 20px; }
+
+        .announcement-year {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--gold-light);
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .announcement-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: #fff;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .laureates {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .laureate {
+            text-align: center;
+        }
+
+        .laureate-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--gold);
+            margin-bottom: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .laureate-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .laureate-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 0.95rem;
+            color: var(--gold-light);
+            font-style: italic;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--royal-blue);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 2px;
+            background: var(--gold);
+            margin: 15px auto 0;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #444;
+        }
+
+        /* History Section */
+        .history-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .history-text {
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .history-text p {
+            margin-bottom: 20px;
+        }
+
+        .history-image {
+            background: linear-gradient(135deg, var(--royal-blue), #0d1a30);
+            padding: 30px;
+            text-align: center;
+            border: 2px solid var(--gold);
+        }
+
+        .founder-portrait {
+            width: 200px;
+            height: 250px;
+            margin: 0 auto 20px;
+            border: 3px solid var(--gold);
+            overflow: hidden;
+        }
+
+        .founder-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .founder-title {
+            font-size: 0.9rem;
+            color: var(--gold-light);
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* Quote Block */
+        .quote-block {
+            background: var(--royal-blue);
+            padding: 40px 50px;
+            margin: 40px 0;
+            position: relative;
+            border-left: 4px solid var(--gold);
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: #fff;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .quote-attribution {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        /* Historic Photo */
+        .historic-photo-section {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .historic-photo-container {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--royal-blue), #0d1a30);
+            padding: 20px;
+            border: 3px solid var(--gold);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .historic-photo {
+            max-width: 100%;
+            width: 600px;
+            height: auto;
+            display: block;
+            border: 2px solid var(--gold-light);
+        }
+
+        .historic-photo-caption {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--gold-light);
+            font-style: italic;
+            margin-top: 15px;
+            padding: 0 20px;
+        }
+
+        .historic-photo-date {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin-top: 8px;
+        }
+
+        /* Past Laureates Table */
+        .laureates-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .laureates-table th {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--royal-blue);
+            color: var(--gold);
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        .laureates-table td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #ddd;
+            font-size: 0.95rem;
+        }
+
+        .laureates-table tr:nth-child(even) {
+            background: rgba(201, 162, 39, 0.05);
+        }
+
+        .laureates-table tr:hover {
+            background: rgba(201, 162, 39, 0.1);
+        }
+
+        .year-cell {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: var(--royal-blue);
+        }
+
+        .institution-cell {
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Historical Records Toggle */
+        .historical-toggle {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .toggle-btn {
+            background: var(--royal-blue);
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            padding: 15px 30px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            background: var(--gold);
+            color: var(--royal-blue);
+        }
+
+        .toggle-icon {
+            font-size: 1.4rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-btn.active .toggle-icon {
+            transform: rotate(45deg);
+        }
+
+        .historical-records {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .historical-records.expanded {
+            max-height: 5000px;
+            transition: max-height 0.8s ease-in;
+        }
+
+        /* Criteria Section */
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .criteria-item {
+            background: #fff;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-top: 4px solid var(--gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .criteria-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .criteria-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            color: var(--royal-blue);
+            margin-bottom: 10px;
+        }
+
+        .criteria-desc {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Patron Section */
+        .patron-section {
+            background: linear-gradient(135deg, var(--royal-blue) 0%, #0d1a30 100%);
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            align-items: center;
+            margin: 60px 0;
+        }
+
+        .patron-portrait {
+            width: 200px;
+            height: 250px;
+            border: 3px solid var(--gold);
+            overflow: hidden;
+        }
+
+        .patron-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .patron-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .patron-info .patron-title {
+            font-size: 1rem;
+            color: var(--gold-light);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .patron-info p {
+            color: #c5c5c5;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Ceremony Details */
+        .ceremony-details {
+            background: #fff;
+            padding: 40px;
+            border: 2px solid var(--gold);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .ceremony-details h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--royal-blue);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .ceremony-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .ceremony-item {
+            text-align: center;
+        }
+
+        .ceremony-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .ceremony-value {
+            font-size: 1.1rem;
+            color: var(--dark-text);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--royal-blue);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 3px solid var(--gold);
+        }
+
+        .footer-crest {
+            width: 80px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .footer-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .footer-legal {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .history-content {
+                grid-template-columns: 1fr;
+            }
+            .criteria-grid {
+                grid-template-columns: 1fr;
+            }
+            .patron-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .patron-portrait {
+                margin: 0 auto;
+            }
+            .ceremony-info {
+                grid-template-columns: 1fr;
+            }
+            .header-title {
+                font-size: 1.8rem;
+            }
+            .laureates {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .laureate-photo {
+                width: 120px;
+                height: 120px;
+            }
+            .historic-photo {
+                width: 100%;
+            }
+        }
+
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Medal decoration */
+        .medal-decoration {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 30px;
+        }
+
+        /* Official seal watermark */
+        .watermark {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Royal Crest -->
+    <header class="header">
+        <div class="royal-crest">
+            <svg class="crest-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Shield base -->
+                <path d="M100 10 L180 50 L180 100 C180 150 140 180 100 195 C60 180 20 150 20 100 L20 50 Z"
+                      fill="#1a2a4a" stroke="#c9a227" stroke-width="3"/>
+                <!-- Inner shield -->
+                <path d="M100 25 L165 55 L165 100 C165 140 135 165 100 178 C65 165 35 140 35 100 L35 55 Z"
+                      fill="none" stroke="#c9a227" stroke-width="1.5"/>
+                <!-- Crown -->
+                <path d="M60 45 L75 35 L85 45 L100 30 L115 45 L125 35 L140 45 L135 60 L65 60 Z"
+                      fill="#c9a227"/>
+                <!-- Lions (simplified) -->
+                <circle cx="70" cy="90" r="15" fill="none" stroke="#c9a227" stroke-width="2"/>
+                <circle cx="130" cy="90" r="15" fill="none" stroke="#c9a227" stroke-width="2"/>
+                <!-- Center emblem -->
+                <path d="M100 75 L110 95 L130 95 L115 110 L120 130 L100 118 L80 130 L85 110 L70 95 L90 95 Z"
+                      fill="#c9a227"/>
+                <!-- Banner -->
+                <path d="M50 150 Q100 140 150 150 L145 165 Q100 155 55 165 Z" fill="#c9a227"/>
+                <!-- Text on banner -->
+                <text x="100" y="161" text-anchor="middle" fill="#1a2a4a"
+                      font-family="serif" font-size="10" font-weight="bold">EXCELLENTIA</text>
+            </svg>
+        </div>
+        <h1 class="header-title">The Royal Commonwealth Honours</h1>
+        <p class="header-subtitle">For Excellence in Parental Stewardship</p>
+        <p class="established">Est. MDCCCXCI &bull; Under Royal Charter</p>
+    </header>
+
+    <div class="divider"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="#laureates">2026 Laureates</a>
+        <a href="#history">Heritage</a>
+        <a href="#criteria">Selection</a>
+        <a href="#patron">Royal Patron</a>
+        <a href="#ceremony">Ceremony</a>
+    </nav>
+
+    <main class="main-content">
+        <!-- 2026 Laureates Announcement -->
+        <section id="laureates" class="announcement reveal">
+            <p class="announcement-year">MMXXVI Honours Announcement</p>
+            <h2 class="announcement-title">Laureates</h2>
+            <p style="color: var(--gold-light); font-style: italic; margin-bottom: 20px;">
+                By decree of the Royal Commonwealth Honours Committee
+            </p>
+            <div class="laureates">
+                <div class="laureate">
+                    <img src="images/katie.jpeg" alt="Mrs. Katie Cosgrove" class="laureate-photo">
+                    <p class="laureate-name">Mrs. Katie Cosgrove</p>
+                    <p class="laureate-title">Brighton College, Year Seven</p>
+                </div>
+                <div class="laureate">
+                    <img src="images/chippy.png" alt="Mrs. Chippy Watt" class="laureate-photo">
+                    <p class="laureate-name">Mrs. Chippy Watt</p>
+                    <p class="laureate-title">Brighton College, Year Seven</p>
+                </div>
+                <div class="laureate">
+                    <img src="images/rich.jpeg" alt="Mr. Rich Lowenberg" class="laureate-photo">
+                    <p class="laureate-name">Mr. Rich Lowenberg</p>
+                    <p class="laureate-title">Brighton College, Year Seven</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Heritage Section -->
+        <section id="history" class="reveal">
+            <h2 class="section-title">Heritage & Foundation</h2>
+            <p class="intro-text">
+                For over one hundred and thirty-five years, The Royal Commonwealth Honours for Excellence in Parental Stewardship
+                has recognised the extraordinary dedication of parent representatives who serve as the vital
+                bridge between families and educational institutions.
+            </p>
+
+            <div class="history-content">
+                <div class="history-text">
+                    <p>
+                        Founded in 1891 by the Right Honourable Sir Montague Ashworth-Pemberton, 3rd Earl of Westmoorland
+                        and Gentleman of the Privy Chamber to Her Majesty Queen Victoria, the Honours were established during
+                        the golden age of British educational reform to recognise those unsung heroes of the educational community: parent representatives.
+                    </p>
+                    <p>
+                        Sir Montague, a close confidant of Prince Albert and passionate advocate for educational excellence,
+                        conceived the Honours following a state visit to Prussia where he observed the vital role that parent
+                        advocates played in the renowned Gymnasium system. Upon his return, he petitioned the Queen directly,
+                        receiving Royal Assent on the 14th of June, 1891.
+                    </p>
+                    <p>
+                        "The parent representative," Sir Archibald wrote in the founding charter, "stands as sentinel
+                        at the gates of our children's futures. They deserve not merely our gratitude, but our
+                        most distinguished honours."
+                    </p>
+                    <p>
+                        The Honours were formally incorporated into the Royal Charter of Educational Distinctions in 1897,
+                        during Queen Victoria's Diamond Jubilee celebrations. Over the past 135 years, more than 2,847 distinguished
+                        parent representatives across the Commonwealth nations have been invested into the various Orders.
+                    </p>
+                </div>
+                <div class="history-image">
+                    <div class="founder-portrait">
+                        <img src="images/king.png" alt="Sir Montague Ashworth-Pemberton">
+                    </div>
+                    <p class="founder-name">Sir Montague Ashworth-Pemberton</p>
+                    <p class="founder-title">3rd Earl of Westmoorland, KCB, GCSI<br>Founder, 1891</p>
+                </div>
+            </div>
+
+            <div class="quote-block">
+                <p class="quote-text">
+                    "In the great tapestry of education, it is the parent representative who weaves together
+                    the threads of family, school, and community into something truly magnificent."
+                </p>
+                <p class="quote-attribution">
+                    &mdash; From the Founding Charter, Michaelmas Term, 1891
+                </p>
+            </div>
+
+            <div class="historic-photo-section">
+                <div class="historic-photo-container">
+                    <img src="images/prince.png" alt="His Grace presenting Honours at a previous investiture ceremony" class="historic-photo">
+                    <p class="historic-photo-caption">
+                        His Grace, The Duke of Thornbury, presenting the Honours
+                        at the 127th Annual Investiture Ceremony
+                    </p>
+                    <p class="historic-photo-date">Pemberton Hall, 2018</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Laureates -->
+        <section class="reveal">
+            <h2 class="section-title">Distinguished Past Laureates</h2>
+            <p class="intro-text">
+                The complete register of laureates spanning our 135-year history.
+            </p>
+
+            <table class="laureates-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Laureate</th>
+                        <th>Institution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="year-cell">2026</td><td>Mrs. Katie Cosgrove, Mrs. Chippy Watt, Mr. Rich Lowenberg</td><td class="institution-cell">Brighton College</td></tr>
+                    <tr><td class="year-cell">2025</td><td>Mrs. Helena Fairweather-Jones, Dr. Marcus Whitehall-Fry</td><td class="institution-cell">Westminster Preparatory School</td></tr>
+                    <tr><td class="year-cell">2024</td><td>Dr. Theodore Blackwood</td><td class="institution-cell">King's College School, Wimbledon</td></tr>
+                    <tr><td class="year-cell">2023</td><td>Mr. Geoffrey Hartington III, Mrs. Arabella Sinclair-Worthington</td><td class="institution-cell">Harrow School</td></tr>
+                    <tr><td class="year-cell">2022</td><td>Mrs. Catherine Fortescue</td><td class="institution-cell">Benenden School</td></tr>
+                    <tr><td class="year-cell">2021</td><td>The Hon. Elizabeth Grosvenor, Mr. James Rothwell-Finch</td><td class="institution-cell">Wycombe Abbey</td></tr>
+                    <tr><td class="year-cell">2020</td><td>Lord Humphrey Baskerville</td><td class="institution-cell">Charterhouse</td></tr>
+                    <tr><td class="year-cell">2019</td><td>Dr. Alistair Fanshawe, Mrs. Philippa Cholmondeley</td><td class="institution-cell">Winchester College</td></tr>
+                    <tr><td class="year-cell">2018</td><td>Sir Marcus Pemberton-Hale, Bt.</td><td class="institution-cell">Dulwich College</td></tr>
+                    <tr><td class="year-cell">2017</td><td>Prof. William Ashford-Davenport, Mrs. Victoria Cavendish-Browne</td><td class="institution-cell">Rugby School</td></tr>
+                    <tr><td class="year-cell">2016</td><td>Mrs. Eleanor Thistlewood</td><td class="institution-cell">Downe House</td></tr>
+                    <tr><td class="year-cell">2015</td><td>Mr. Sebastian Ainsworth-Perry, Dame Patricia Hornsby-Clarke DBE</td><td class="institution-cell">Tonbridge School</td></tr>
+                    <tr><td class="year-cell">2014</td><td>Mr. Reginald Ffoulkes-Williams</td><td class="institution-cell">Shrewsbury School</td></tr>
+                    <tr><td class="year-cell">2013</td><td>Mrs. Beatrice Montague-Douglas, Prof. Edmund Chatterton</td><td class="institution-cell">Malvern College</td></tr>
+                    <tr><td class="year-cell">2012</td><td>Lady Rosemary Stirling-Howard</td><td class="institution-cell">Tudor Hall</td></tr>
+                    <tr><td class="year-cell">2011</td><td>Mr. Archibald Ponsonby-Smythe</td><td class="institution-cell">Marlborough College</td></tr>
+                    <tr><td class="year-cell">2010</td><td>Mrs. Cordelia Trevelyan, The Hon. Nigel Fortescue-Braithwaite</td><td class="institution-cell">Haberdashers' Aske's</td></tr>
+                    <tr><td class="year-cell">2009</td><td>Mrs. Henrietta Cavendish-Bentinck</td><td class="institution-cell">Badminton School</td></tr>
+                    <tr><td class="year-cell">2008</td><td>Sir Edmund Rothschild-Hayes, Bt.</td><td class="institution-cell">Stowe School</td></tr>
+                    <tr><td class="year-cell">2007</td><td>Dr. Harriet Willoughby-Drummond, The Viscount Petersham</td><td class="institution-cell">Francis Holland School</td></tr>
+                    <tr><td class="year-cell">2006</td><td>Mrs. Evangeline Harcourt-Vernon</td><td class="institution-cell">Headington School</td></tr>
+                    <tr><td class="year-cell">2005</td><td>Lord Algernon Fitzwilliam, Mrs. Millicent Cholmondeley-Warner</td><td class="institution-cell">Radley College</td></tr>
+                    <tr><td class="year-cell">2004</td><td>Mr. Rupert Gascoyne-Cecil</td><td class="institution-cell">Uppingham School</td></tr>
+                    <tr><td class="year-cell">2003</td><td>Dame Agatha Beauchamp-Proctor DBE</td><td class="institution-cell">St. Swithun's School</td></tr>
+                    <tr><td class="year-cell">2002</td><td>Col. Sir Reginald Montagu-Douglas-Scott DSO, The Marchioness of Salisbury</td><td class="institution-cell">Repton School</td></tr>
+                    <tr><td class="year-cell">2001</td><td>Lord Cedric Manners</td><td class="institution-cell">Haileybury College</td></tr>
+                    <tr><td class="year-cell">2000</td><td>Mrs. Clementine Wentworth-Fitzwilliam, The Earl of Rosebery</td><td class="institution-cell">St. Mary's Ascot</td></tr>
+                </tbody>
+            </table>
+
+            <!-- Collapsible Historical Records -->
+            <div class="historical-toggle">
+                <button class="toggle-btn" onclick="toggleHistorical()">
+                    <span class="toggle-text">View Historical Records (1891&ndash;1999)</span>
+                    <span class="toggle-icon">+</span>
+                </button>
+            </div>
+
+            <div class="historical-records" id="historicalRecords">
+                <table class="laureates-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Laureate</th>
+                            <th>Institution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="year-cell">1999</td><td>Mrs. Millicent Cholmondeley-Warner, Mr. Rupert Gascoyne-Cecil</td><td class="institution-cell">Sherborne School for Girls</td></tr>
+                        <tr><td class="year-cell">1998</td><td>Dame Agatha Beauchamp-Proctor DBE</td><td class="institution-cell">St. Swithun's School</td></tr>
+                        <tr><td class="year-cell">1997</td><td>Col. Sir Reginald Montagu-Douglas-Scott DSO, The Marchioness of Salisbury</td><td class="institution-cell">Repton School</td></tr>
+                        <tr><td class="year-cell">1996</td><td>Lord Cedric Manners</td><td class="institution-cell">Haileybury College</td></tr>
+                        <tr><td class="year-cell">1995</td><td>Mrs. Clementine Wentworth-Fitzwilliam, The Earl of Rosebery</td><td class="institution-cell">St. Mary's Ascot</td></tr>
+                        <tr><td class="year-cell">1994</td><td>Lady Constance Howard de Walden</td><td class="institution-cell">Roedean School</td></tr>
+                        <tr><td class="year-cell">1993</td><td>Sir Peregrine Worsthorne</td><td class="institution-cell">Stowe School</td></tr>
+                        <tr><td class="year-cell">1992</td><td>Mrs. Lavinia Spencer-Churchill, The Duke of Devonshire</td><td class="institution-cell">Downe House</td></tr>
+                        <tr><td class="year-cell">1991</td><td>Lady Antonia Fraser</td><td class="institution-cell">St. Mary's Ascot</td></tr>
+                        <tr><td class="year-cell">1990</td><td>Sir Ranulph Twisleton-Wykeham-Fiennes, Mrs. Penelope Mortimer-Hawkins</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1989</td><td>Lord Carrington</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1988</td><td>Lady Pamela Hicks, Sir Nicholas Henderson</td><td class="institution-cell">Benenden School</td></tr>
+                        <tr><td class="year-cell">1987</td><td>Mrs. Clarissa Eden</td><td class="institution-cell">Queen's Gate School</td></tr>
+                        <tr><td class="year-cell">1986</td><td>The Earl of Lichfield</td><td class="institution-cell">Harrow School</td></tr>
+                        <tr><td class="year-cell">1985</td><td>Lady Diana Cooper, Sir Fitzroy Maclean</td><td class="institution-cell">St. Paul's Girls' School</td></tr>
+                        <tr><td class="year-cell">1984</td><td>Mrs. Deborah Mitford</td><td class="institution-cell">Heathfield School</td></tr>
+                        <tr><td class="year-cell">1983</td><td>Lord Mountbatten of Burma</td><td class="institution-cell">Royal Naval College</td></tr>
+                        <tr><td class="year-cell">1982</td><td>Lady Mosley, Sir Harold Acton</td><td class="institution-cell">St. Margaret's School</td></tr>
+                        <tr><td class="year-cell">1981</td><td>Mrs. Nancy Lancaster</td><td class="institution-cell">Sherborne School for Girls</td></tr>
+                        <tr><td class="year-cell">1980</td><td>The Duke of Beaufort, Lady Elizabeth Cavendish</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1979</td><td>Sir Cecil Beaton</td><td class="institution-cell">Harrow School</td></tr>
+                        <tr><td class="year-cell">1978</td><td>Mrs. Violet Bonham Carter</td><td class="institution-cell">St. Paul's Girls' School</td></tr>
+                        <tr><td class="year-cell">1977</td><td>Lord David Cecil, Lady Redesdale</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1976</td><td>Sir Osbert Lancaster</td><td class="institution-cell">Charterhouse</td></tr>
+                        <tr><td class="year-cell">1975</td><td>Mrs. Ann Fleming, The Earl of Avon</td><td class="institution-cell">Queen's Gate School</td></tr>
+                        <tr><td class="year-cell">1974</td><td>Lady Dorothy Macmillan</td><td class="institution-cell">Roedean School</td></tr>
+                        <tr><td class="year-cell">1973</td><td>Sir John Betjeman</td><td class="institution-cell">Marlborough College</td></tr>
+                        <tr><td class="year-cell">1972</td><td>Mrs. Sybil Colefax, Lord Beaverbrook</td><td class="institution-cell">Francis Holland School</td></tr>
+                        <tr><td class="year-cell">1971</td><td>Lady Cunard</td><td class="institution-cell">Wycombe Abbey</td></tr>
+                        <tr><td class="year-cell">1970</td><td>Sir Anthony Eden, Mrs. Wallis Warfield</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1969</td><td>The Duke of Windsor</td><td class="institution-cell">Royal Naval College</td></tr>
+                        <tr><td class="year-cell">1968</td><td>Lady Astor</td><td class="institution-cell">Queen's College</td></tr>
+                        <tr><td class="year-cell">1967</td><td>Sir Winston Churchill, Mrs. Clementine Churchill</td><td class="institution-cell">Harrow School</td></tr>
+                        <tr><td class="year-cell">1966</td><td>Lord Mountbatten</td><td class="institution-cell">Royal Naval College</td></tr>
+                        <tr><td class="year-cell">1965</td><td>Lady Louis Mountbatten, Sir Anthony Blunt</td><td class="institution-cell">The Links School</td></tr>
+                        <tr><td class="year-cell">1964</td><td>Mrs. Virginia Woolf</td><td class="institution-cell">King's College School</td></tr>
+                        <tr><td class="year-cell">1963</td><td>Lord Keynes</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1962</td><td>Lady Ottoline Morrell, Sir Oswald Mosley</td><td class="institution-cell">St. Anne's School</td></tr>
+                        <tr><td class="year-cell">1961</td><td>Mrs. Diana Mosley</td><td class="institution-cell">St. Margaret's School</td></tr>
+                        <tr><td class="year-cell">1960</td><td>Lord Halifax, Lady Halifax</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1959</td><td>Sir Stafford Cripps, Mrs. Isobel Cripps</td><td class="institution-cell">Winchester College</td></tr>
+                        <tr><td class="year-cell">1958</td><td>Lord Rothermere</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1957</td><td>Lady Rothermere, Sir Samuel Hoare</td><td class="institution-cell">Queen's Gate School</td></tr>
+                        <tr><td class="year-cell">1956</td><td>Lady Maud Hoare</td><td class="institution-cell">Heathfield School</td></tr>
+                        <tr><td class="year-cell">1955</td><td>Lord Londonderry, Lady Londonderry</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1954</td><td>Sir Philip Sassoon</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1953</td><td>Lady Sybil Grant</td><td class="institution-cell">St. Paul's Girls' School</td></tr>
+                        <tr><td class="year-cell">1952</td><td>Lord Curzon, Lady Curzon</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1951</td><td>Sir Austen Chamberlain</td><td class="institution-cell">Rugby School</td></tr>
+                        <tr><td class="year-cell">1950</td><td>Lady Ivy Chamberlain, Lord Balfour</td><td class="institution-cell">Cheltenham Ladies' College</td></tr>
+                        <tr><td class="year-cell">1949</td><td>Lady Frances Balfour</td><td class="institution-cell">St. Leonard's School</td></tr>
+                        <tr><td class="year-cell">1948</td><td>Sir Edward Grey</td><td class="institution-cell">Winchester College</td></tr>
+                        <tr><td class="year-cell">1947</td><td>Lady Grey, Lord Asquith</td><td class="institution-cell">St. Mary's Calne</td></tr>
+                        <tr><td class="year-cell">1946</td><td>Lady Margot Asquith</td><td class="institution-cell">Cheltenham Ladies' College</td></tr>
+                        <tr><td class="year-cell">1945</td><td>Sir Herbert Samuel, Lady Beatrice Samuel</td><td class="institution-cell">University College School</td></tr>
+                        <tr><td class="year-cell">1944</td><td>Lord Milner</td><td class="institution-cell">King's College School</td></tr>
+                        <tr><td class="year-cell">1943</td><td>Lady Violet Milner</td><td class="institution-cell">Roedean School</td></tr>
+                        <tr><td class="year-cell">1942</td><td>Sir Douglas Haig, Lady Haig</td><td class="institution-cell">Clifton College</td></tr>
+                        <tr><td class="year-cell">1941</td><td>Lord Kitchener</td><td class="institution-cell">Royal Military Academy</td></tr>
+                        <tr><td class="year-cell">1940</td><td>Lady Jellicoe, Sir John French</td><td class="institution-cell">Queen Anne's School</td></tr>
+                        <tr><td class="year-cell">1939</td><td>Lady French</td><td class="institution-cell">Wycombe Abbey</td></tr>
+                        <tr><td class="year-cell">1938</td><td>Lord Roberts</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1937</td><td>Lady Aileen Roberts, Sir Edward Elgar</td><td class="institution-cell">Cheltenham Ladies' College</td></tr>
+                        <tr><td class="year-cell">1936</td><td>Lady Elgar</td><td class="institution-cell">St. James's School</td></tr>
+                        <tr><td class="year-cell">1935</td><td>Lord Northcliffe, Lady Northcliffe</td><td class="institution-cell">Stamford Grammar School</td></tr>
+                        <tr><td class="year-cell">1934</td><td>Sir Henry Campbell-Bannerman</td><td class="institution-cell">Glasgow High School</td></tr>
+                        <tr><td class="year-cell">1933</td><td>Lady Campbell-Bannerman</td><td class="institution-cell">Edinburgh Ladies' College</td></tr>
+                        <tr><td class="year-cell">1932</td><td>Lord Rosebery, Lady Rosebery</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1931</td><td>Sir Arthur Balfour</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1930</td><td>Lady Betty Balfour, Lord Salisbury</td><td class="institution-cell">Newnham College School</td></tr>
+                        <tr><td class="year-cell">1929</td><td>Lady Salisbury</td><td class="institution-cell">Queen's College</td></tr>
+                        <tr><td class="year-cell">1928</td><td>Sir William Harcourt</td><td class="institution-cell">Trinity College School</td></tr>
+                        <tr><td class="year-cell">1927</td><td>Lady Harcourt, The Earl of Kimberley</td><td class="institution-cell">Roedean School</td></tr>
+                        <tr><td class="year-cell">1926</td><td>The Countess of Kimberley</td><td class="institution-cell">Cheltenham Ladies' College</td></tr>
+                        <tr><td class="year-cell">1925</td><td>Lord Lansdowne, Lady Lansdowne</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1924</td><td>Sir Edward Carson</td><td class="institution-cell">Trinity College School</td></tr>
+                        <tr><td class="year-cell">1923</td><td>Lady Carson</td><td class="institution-cell">Alexandra College</td></tr>
+                        <tr><td class="year-cell">1922</td><td>Lord Birkenhead, Lady Birkenhead</td><td class="institution-cell">Wadham College School</td></tr>
+                        <tr><td class="year-cell">1921</td><td>Sir F.E. Smith</td><td class="institution-cell">Birkenhead School</td></tr>
+                        <tr><td class="year-cell">1920</td><td>Lady Eleanor Smith, Lord Derby</td><td class="institution-cell">Heathfield School</td></tr>
+                        <tr><td class="year-cell">1919</td><td>Lady Derby</td><td class="institution-cell">Roedean School</td></tr>
+                        <tr><td class="year-cell">1918</td><td>Lord Devonport</td><td class="institution-cell">City of London School</td></tr>
+                        <tr><td class="year-cell">1917</td><td>Lady Devonport, Sir George Cave</td><td class="institution-cell">South Hampstead High School</td></tr>
+                        <tr><td class="year-cell">1916</td><td>Lady Cave</td><td class="institution-cell">Queen's Gate School</td></tr>
+                        <tr><td class="year-cell">1915</td><td>Lord Selborne, Lady Selborne</td><td class="institution-cell">Winchester College</td></tr>
+                        <tr><td class="year-cell">1914</td><td>Sir Edward Grey</td><td class="institution-cell">Winchester College</td></tr>
+                        <tr><td class="year-cell">1913</td><td>Lady Grey</td><td class="institution-cell">Wycombe Abbey</td></tr>
+                        <tr><td class="year-cell">1912</td><td>Lord Crewe, Lady Crewe</td><td class="institution-cell">Harrow School</td></tr>
+                        <tr><td class="year-cell">1911</td><td>Sir Charles Hardinge</td><td class="institution-cell">Harrow School</td></tr>
+                        <tr><td class="year-cell">1910</td><td>Lady Hardinge</td><td class="institution-cell">St. Paul's Girls' School</td></tr>
+                        <tr><td class="year-cell">1909</td><td>Lord Morley, Lady Morley</td><td class="institution-cell">University College School</td></tr>
+                        <tr><td class="year-cell">1908</td><td>Sir Henry Fowler</td><td class="institution-cell">Woodhouse Grove School</td></tr>
+                        <tr><td class="year-cell">1907</td><td>Lady Fowler</td><td class="institution-cell">Edgbaston High School</td></tr>
+                        <tr><td class="year-cell">1906</td><td>Lord Ripon, Lady Ripon</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1905</td><td>Sir Michael Hicks Beach</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1904</td><td>Lady Hicks Beach</td><td class="institution-cell">Cheltenham Ladies' College</td></tr>
+                        <tr><td class="year-cell">1903</td><td>Lord James of Hereford, Lady James</td><td class="institution-cell">Cheltenham College</td></tr>
+                        <tr><td class="year-cell">1902</td><td>Sir Matthew Ridley</td><td class="institution-cell">Harrow School</td></tr>
+                        <tr><td class="year-cell">1901</td><td>Lady Ridley</td><td class="institution-cell">Queen's Gate School</td></tr>
+                        <tr><td class="year-cell">1900</td><td>Lord George Hamilton, Lady Hamilton</td><td class="institution-cell">Harrow School</td></tr>
+                        <tr><td class="year-cell">1899</td><td>Sir Henry Campbell-Bannerman</td><td class="institution-cell">Glasgow High School</td></tr>
+                        <tr><td class="year-cell">1898</td><td>Lady Campbell-Bannerman</td><td class="institution-cell">Edinburgh Ladies' College</td></tr>
+                        <tr><td class="year-cell">1897</td><td>HRH The Duke of Connaught, The Countess of Warwick</td><td class="institution-cell">Wellington College</td></tr>
+                        <tr><td class="year-cell">1896</td><td>Lord Curzon of Kedleston</td><td class="institution-cell">Eton College</td></tr>
+                        <tr><td class="year-cell">1895</td><td>Lady Randolph Churchill, The Marquess of Hartington</td><td class="institution-cell">Winchester College</td></tr>
+                        <tr><td class="year-cell">1894</td><td>Lady Georgiana Curzon</td><td class="institution-cell">Cheltenham Ladies' College</td></tr>
+                        <tr><td class="year-cell">1893</td><td>Sir William Vernon Harcourt</td><td class="institution-cell">Trinity College School</td></tr>
+                        <tr><td class="year-cell">1892</td><td>Lady Harcourt, Lord Rosebery</td><td class="institution-cell">Roedean School</td></tr>
+                        <tr><td class="year-cell">1891</td><td>Lady Georgiana Ashworth-Pemberton, The Marquess of Hartington, Lady Randolph Churchill</td><td class="institution-cell">Eton College</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Selection Criteria -->
+        <section id="criteria" class="reveal">
+            <h2 class="section-title">Selection Criteria</h2>
+            <p class="intro-text">
+                The Honours Committee evaluates candidates against the most rigorous standards of
+                excellence in parental stewardship, as established by the founding charter.
+            </p>
+
+            <div class="criteria-grid">
+                <div class="criteria-item">
+                    <div class="criteria-icon">&#9733;</div>
+                    <h3 class="criteria-title">Distinguished Service</h3>
+                    <p class="criteria-desc">
+                        Demonstrated commitment to the welfare and advancement of the school community
+                        through sustained engagement and leadership.
+                    </p>
+                </div>
+                <div class="criteria-item">
+                    <div class="criteria-icon">&#9878;</div>
+                    <h3 class="criteria-title">Bridge Building</h3>
+                    <p class="criteria-desc">
+                        Excellence in fostering communication between parents, educators, and
+                        administrative bodies for the common good.
+                    </p>
+                </div>
+                <div class="criteria-item">
+                    <div class="criteria-icon">&#9830;</div>
+                    <h3 class="criteria-title">Innovation & Initiative</h3>
+                    <p class="criteria-desc">
+                        Implementation of programmes or initiatives that measurably enhance the
+                        educational experience of all students.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Royal Patron -->
+        <section id="patron" class="patron-section reveal">
+            <div class="patron-portrait">
+                <img src="images/prince-portrait.png" alt="His Grace, The Duke of Thornbury">
+            </div>
+            <div class="patron-info">
+                <h3>His Grace, The Duke of Thornbury</h3>
+                <p class="patron-title">Lord Alistair Percival Wyndham, KCVO, CStJ &mdash; Royal Patron since 2003</p>
+                <p>
+                    His Grace serves as the eighth Royal Patron of the Honours, continuing a family tradition
+                    of support for educational excellence that dates to the very founding of the institution.
+                    His great-great-grandfather, the 1st Duke, stood alongside Sir Montague Ashworth-Pemberton
+                    when the Honours received Royal Assent from Queen Victoria in 1891. A distant cousin to
+                    the Royal Family through the House of Mountbatten-Windsor, the Duke brings unparalleled
+                    gravitas and distinction to the annual investiture ceremony.
+                </p>
+                <p style="margin-top: 15px;">
+                    "For one hundred and thirty-five years, these Honours have recognised those who serve our
+                    children's futures with unwavering dedication. To continue this legacy is both my privilege
+                    and my sacred duty."
+                </p>
+            </div>
+        </section>
+
+        <!-- Ceremony Details -->
+        <section id="ceremony" class="reveal">
+            <h2 class="section-title">The Investiture Ceremony</h2>
+            <p class="intro-text">
+                The 135th Annual Investiture will present the 2026 Honours at a formal ceremony
+                befitting the distinguished nature of this recognition, continuing an unbroken
+                tradition since the inaugural ceremony of 1891.
+            </p>
+
+            <div class="ceremony-details">
+                <h3>MMXXVI Investiture Details</h3>
+                <div class="ceremony-info">
+                    <div class="ceremony-item">
+                        <p class="ceremony-label">Date</p>
+                        <p class="ceremony-value">27th April, 2026</p>
+                    </div>
+                    <div class="ceremony-item">
+                        <p class="ceremony-label">Venue</p>
+                        <p class="ceremony-value">The Pemberton Hall<br>Royal Geographical Society</p>
+                    </div>
+                    <div class="ceremony-item">
+                        <p class="ceremony-label">Dress Code</p>
+                        <p class="ceremony-value">Morning Dress or Lounge Suit<br>National Dress Welcome</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <svg class="footer-crest" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 10 L180 50 L180 100 C180 150 140 180 100 195 C60 180 20 150 20 100 L20 50 Z"
+                  fill="none" stroke="#c9a227" stroke-width="2"/>
+            <path d="M100 75 L110 95 L130 95 L115 110 L120 130 L100 118 L80 130 L85 110 L70 95 L90 95 Z"
+                  fill="#c9a227"/>
+        </svg>
+        <p class="footer-text">The Royal Commonwealth Honours for Excellence in Parental Stewardship</p>
+        <p class="footer-text" style="font-size: 0.75rem; opacity: 0.7;">Under the Distinguished Patronage of His Grace, The Duke of Thornbury</p>
+        <p class="footer-legal">
+            &copy; 1891&ndash;2026 Royal Commonwealth Honours Committee &bull; Royal Charter No. RC-1897-0614<br>
+            Pemberton House, 14 Belgrave Square, London SW1X 8PS
+        </p>
+        <p class="footer-legal" style="margin-top: 15px;">
+            <a href="about.html" style="color: #888; text-decoration: none; font-size: 0.75rem;">About the Foundation</a>
+        </p>
+    </footer>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+
+        function toggleHistorical() {
+            const records = document.getElementById('historicalRecords');
+            const btn = document.querySelector('.toggle-btn');
+            const text = document.querySelector('.toggle-text');
+
+            records.classList.toggle('expanded');
+            btn.classList.toggle('active');
+
+            if (records.classList.contains('expanded')) {
+                text.textContent = 'Hide Historical Records (1891–1999)';
+            } else {
+                text.textContent = 'View Historical Records (1891–1999)';
+            }
+        }
+    </script>
+</body>
+</html>
